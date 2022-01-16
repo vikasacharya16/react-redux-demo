@@ -10,12 +10,13 @@ import HooksCakeContainer from './components/HooksCakeContainer';
 import IcecreamContainer from './components/IcecreamContainer';
 import NewCakeContainer from './components/NewCakeContainer';
 import GeneralContainer from './components/GeneralContainer';
+import UserContainer from './components/UserContainer';
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <div style={{margin : 20, border : '1px solid red' }}>
+        {/* <div style={{margin : 20, border : '1px solid red' }}>
           <FontAwesomeIcon icon={faCoffee} />
         </div>
 
@@ -27,7 +28,9 @@ function App() {
 
         <IcecreamContainer />
 
-        <NewCakeContainer />
+        <NewCakeContainer /> */}
+
+        <UserContainer />
       </div>
     </Provider>
   );
