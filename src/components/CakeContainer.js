@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 import { buyCake } from '../redux'
 
 const CakeContainer = (props) => {
-    //console.log(props) // disadvantage is props will get override if it is same `numberOfCakes`
+    // numberOfCakes is 20 but it got override by mapStateToProps below to 10(i.e reduxState value)
     return(
         <div>
-            <h2>Number of Cakes - {props.numberOfCakes}</h2>
+            <h2>Number of Cakes {props.numberOfCakes}</h2>
             <button onClick={props.buyCake}>buy cake</button>
         </div>
     )
@@ -14,7 +14,8 @@ const CakeContainer = (props) => {
 
 const mapStateToProps = reduxState => {
     return {
-        numberOfCakes : reduxState.numberOfCakes
+        ...reduxState.cake,
+        numberOfCakes : reduxState.cake.numberOfCakes // it overrides the props with same name passed to this component 
     }
 }
 
